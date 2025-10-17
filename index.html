@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador Acadêmico - Meu Estudo</title>
+
+    <style>
+        /* Definição de Cores */
+        :root {
+            --cor-primaria: #FFFFFF; /* Branco */
+            --cor-secundaria: #F0F0F0; /* Cinza Claro para Fundo de Seções */
+            --cor-destaque: #FF8C00; /* Laranja Vibrante */
+            --cor-texto-principal: #333333; /* Cinza Escuro */
+            --cor-texto-secundario: #666666; /* Cinza Médio */
+        }
+
+        /* Reset Básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--cor-secundaria);
+            color: var(--cor-texto-principal);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho e Navegação */
+        .cabecalho {
+            background-color: var(--cor-primaria);
+            color: var(--cor-texto-principal);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            color: var(--cor-destaque);
+            font-size: 1.8em;
+        }
+
+        .menu-nav a {
+            text-decoration: none;
+            color: var(--cor-texto-secundario);
+            margin-left: 25px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu-nav a:hover {
+            color: var(--cor-destaque);
+        }
+
+        /* Conteúdo Principal */
+        .conteudo {
+            padding: 20px 40px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .secao {
+            background-color: var(--cor-primaria);
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .secao h2 {
+            color: var(--cor-destaque);
+            border-bottom: 2px solid var(--cor-secundaria);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Dashboard - Estatísticas */
+        .estatisticas {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .card-estatistica {
+            background-color: var(--cor-secundaria);
+            padding: 20px;
+            border-radius: 6px;
+            flex-basis: 30%;
+            text-align: center;
+        }
+
+        .card-estatistica h3 {
+            color: var(--cor-texto-secundario);
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .card-estatistica .numero {
+            color: var(--cor-destaque);
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        /* Tarefas */
+        .lista-tarefas {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .tarefa-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px dashed var(--cor-secundaria);
+        }
+
+        .tarefa-item:last-child {
+            border-bottom: none;
+        }
+
+        .tarefa-prazo {
+            color: var(--cor-destaque);
+            font-weight: bold;
+        }
+
+        .urgente .tarefa-titulo {
+            font-weight: bold;
+            color: var(--cor-destaque); /* Destaque em laranja para urgente */
+        }
+
+        /* Disciplinas */
+        .lista-disciplinas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card-disciplina {
+            background-color: var(--cor-primaria);
+            border: 1px solid var(--cor-secundaria);
+            padding: 15px;
+            border-radius: 6px;
+            transition: border-color 0.3s;
+        }
+
+        .card-disciplina:hover {
+            border-color: var(--cor-destaque);
+        }
+
+        .card-disciplina h3 {
+            margin-bottom: 5px;
+            color: var(--cor-texto-principal);
+        }
+
+        .progresso {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: var(--cor-destaque);
+            font-weight: bold;
+        }
+
+        /* Botão Principal */
+        .botao-principal {
+            background-color: var(--cor-destaque);
+            color: var(--cor-primaria);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .botao-principal:hover {
+            background-color: #E67E22; /* Laranja um pouco mais escuro ao passar o mouse */
+        }
+
+        /* Rodapé */
+        .rodape {
+            background-color: var(--cor-texto-principal); /* Fundo escuro para contraste */
+            color: var(--cor-secundaria);
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        /* Responsividade Básica (Opcional, mas recomendado) */
+        @media (max-width: 768px) {
+            .cabecalho {
+                flex-direction: column;
+                padding: 15px 20px;
+            }
+            .menu-nav {
+                margin-top: 10px;
+            }
+            .menu-nav a {
+                margin-left: 10px;
+            }
+            .estatisticas {
+                flex-direction: column;
+            }
+            .card-estatistica {
+                flex-basis: 100%;
+                margin-bottom: 10px;
+            }
+            .conteudo {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+    </head>
+<body>
+
+    <header class="cabecalho">
+        <h1 class="logo">Organizador Acadêmico</h1>
+        <nav class="menu-nav">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#tarefas">Tarefas</a>
+            <a href="#disciplinas">Disciplinas</a>
+            <a href="#calendario">Calendário</a>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <section id="dashboard" class="secao-principal secao">
+            <h2>Bem-vindo(a) de volta!</h2>
+            <div class="estatisticas">
+                <div class="card-estatistica">
+                    <h3>Atividades Pendentes</h3>
+                    <p class="numero">5</p>
+                </div>
+                <div class="card-estatistica">
+                    <h3>Média Geral Estimada</h3>
+                    <p class="numero">8.5</p>
+                </div>
+                <div class="card-estatistica">
+                    <h3>Horas de Estudo (Semana)</h3>
+                    <p class="numero">12h</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tarefas" class="secao">
+            <h2>Próximas Tarefas e Prazos</h2>
+            <ul class="lista-tarefas">
+                <li class="tarefa-item urgente">
+                    <span class="tarefa-titulo">Entrega do Projeto X</span>
+                    <span class="tarefa-prazo">Prazo: 20/Out</span>
+                </li>
+                <li class="tarefa-item">
+                    <span class="tarefa-titulo">Leitura Cap. 3 - Cálculo</span>
+                    <span class="tarefa-prazo">Prazo: 25/Out</span>
+                </li>
+                <li class="tarefa-item">
+                    <span class="tarefa-titulo">Revisão para Prova de História</span>
+                    <span class="tarefa-prazo">Prazo: 05/Nov</span>
+                </li>
+            </ul>
+            <button class="botao-principal">+ Adicionar Nova Tarefa</button>
+        </section>
+
+        <section id="disciplinas" class="secao">
+            <h2>Minhas Disciplinas</h2>
+            <div class="lista-disciplinas">
+                <div class="card-disciplina">
+                    <h3>Cálculo I</h3>
+                    <p>Prof. João Silva</p>
+                    <span class="progresso">Progresso: 40%</span>
+                </div>
+                <div class="card-disciplina">
+                    <h3>Programação Web</h3>
+                    <p>Prof. Ana Mendes</p>
+                    <span class="progresso">Progresso: 65%</span>
+                </div>
+                <div class="card-disciplina">
+                    <h3>História Contemporânea</h3>
+                    <p>Prof. Pedro Alvares</p>
+                    <span class="progresso">Progresso: 50%</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2025 Organizador Acadêmico. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
