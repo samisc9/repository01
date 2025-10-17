@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizador Acadêmico - Meu Estudo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="cabecalho">
+        <h1 class="logo">Organizador Acadêmico</h1>
+        <nav class="menu-nav">
+            <a href="#dashboard">Dashboard</a>
+            <a href="#tarefas">Tarefas</a>
+            <a href="#disciplinas">Disciplinas</a>
+            <a href="#calendario">Calendário</a>
+        </nav>
+    </header>
+
+    <main class="conteudo">
+        <section id="dashboard" class="secao-principal">
+            <h2>Bem-vindo(a) de volta!</h2>
+            <div class="estatisticas">
+                <div class="card-estatistica">
+                    <h3>Atividades Pendentes</h3>
+                    <p class="numero">5</p>
+                </div>
+                <div class="card-estatistica">
+                    <h3>Média Geral Estimada</h3>
+                    <p class="numero">8.5</p>
+                </div>
+                <div class="card-estatistica">
+                    <h3>Horas de Estudo (Semana)</h3>
+                    <p class="numero">12h</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="tarefas" class="secao">
+            <h2>Próximas Tarefas e Prazos</h2>
+            <ul class="lista-tarefas">
+                <li class="tarefa-item urgente">
+                    <span class="tarefa-titulo">Entrega do Projeto X</span>
+                    <span class="tarefa-prazo">Prazo: 20/Out</span>
+                </li>
+                <li class="tarefa-item">
+                    <span class="tarefa-titulo">Leitura Cap. 3 - Cálculo</span>
+                    <span class="tarefa-prazo">Prazo: 25/Out</span>
+                </li>
+                <li class="tarefa-item">
+                    <span class="tarefa-titulo">Revisão para Prova de História</span>
+                    <span class="tarefa-prazo">Prazo: 05/Nov</span>
+                </li>
+            </ul>
+            <button class="botao-principal">+ Adicionar Nova Tarefa</button>
+        </section>
+
+        <section id="disciplinas" class="secao">
+            <h2>Minhas Disciplinas</h2>
+            <div class="lista-disciplinas">
+                <div class="card-disciplina">
+                    <h3>Cálculo I</h3>
+                    <p>Prof. João Silva</p>
+                    <span class="progresso">Progresso: 40%</span>
+                </div>
+                <div class="card-disciplina">
+                    <h3>Programação Web</h3>
+                    <p>Prof. Ana Mendes</p>
+                    <span class="progresso">Progresso: 65%</span>
+                </div>
+                <div class="card-disciplina">
+                    <h3>História Contemporânea</h3>
+                    <p>Prof. Pedro Alvares</p>
+                    <span class="progresso">Progresso: 50%</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2025 Organizador Acadêmico. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
